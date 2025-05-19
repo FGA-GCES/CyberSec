@@ -1,4 +1,8 @@
 # 2025.1
+## Projetos
+ * [MEPA](https://gitlab.com/lappis-unb/projetos-energia)
+ * [Tainacan](https://github.com/tainacan/tainacan)
+ * [Empurrando Juntas](https://gitlab.com/pencillabs/ej/ej-application)
 
 ## Red Team Subgrupos
 
