@@ -146,6 +146,8 @@ Essa etapa geralmente agrupa jobs relacionados a qualidade de código, análise 
 
 ## Resultados
 
+![image](https://github.com/user-attachments/assets/a2b108a3-1d77-4b55-9732-7ba4a3a7eab4)
+
 - A pipeline rodou conforme o esperado, abaixo disponibilizamos alguns prints dos testes realizados pelos alunos Mateus Orlando e Ricardo Augusto:
 
   - 1: Imagem de um merge teste antes de subirmos o JOB do Bandit:
