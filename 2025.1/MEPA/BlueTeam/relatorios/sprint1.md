@@ -58,25 +58,8 @@ Conteúdos abordados:
 
  - Ao final, o JOB que criamos ficou assim:
 
-    ```
-    sast-bandit:
-        stage: quality
-        image: python:3.11
-        before_script:
-            - pip install bandit
-        script:
-            - echo "Rodando Bandit (SAST) no projeto"
-            - bandit -r . -ll -f json -o bandit-report.json
-        artifacts:
-            paths:
-                - bandit-report.json
-            when: always
-            expire_in: 1 week
-        allow_failure: true
-        rules:
-            - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-            - if: $CI_PIPELINE_SOURCE == 'push'
-    ```
+![image](https://github.com/user-attachments/assets/d3636c50-3de0-4488-883c-a50fa7639edf)
+
 
 - Vamos detalhar melhor o que cada parte faz:
 
@@ -163,30 +146,30 @@ Essa etapa geralmente agrupa jobs relacionados a qualidade de código, análise 
 
 ## Resultados
 
-    - A pipeline rodou conforme o esperado, abaixo disponibilizamos alguns prints dos testes realizados pelos alunos Mateus Orlando e Ricardo Augusto:
+- A pipeline rodou conforme o esperado, abaixo disponibilizamos alguns prints dos testes realizados pelos alunos Mateus Orlando e Ricardo Augusto:
 
-        - 1: Imagem de um merge teste antes de subirmos o JOB do Bandit:
+  - 1: Imagem de um merge teste antes de subirmos o JOB do Bandit:
 
-            (imagema aqui)
+    ![Imagem do WhatsApp de 2025-05-22 à(s) 01 19 32_ed263290](https://github.com/user-attachments/assets/38f8a9f1-6271-49f6-a656-7362e67a3180)
 
-        - 2: Imagem do merge após a integração do JOB do Bandit:
+  - 2: Imagem do merge após a integração do JOB do Bandit:
 
-            (imagem aqui)
+    ![Imagem do WhatsApp de 2025-05-22 à(s) 01 20 47_3c610ea4](https://github.com/user-attachments/assets/ff864c13-a8e2-42c8-87f6-50fde2fa5f9b)
 
-        - 3: Imagens do arquivo de relatório .jason, que foi criado após a passagem na pipeline.
-            - Imagem 1:
-                (imagem)
-            - Imagem 2:
-                (imagem)
-        
-        - 4: Imagem mostrando que a pipeline gerou Warnings. Os quais são motivamos por pontos de possíveis SQL injections.
+  - 3: Imagens do arquivo de relatório .jason, que foi criado após a passagem na pipeline.
+      - Imagem 1:
+        ![Imagem do WhatsApp de 2025-05-22 à(s) 01 32 39_61502bef](https://github.com/user-attachments/assets/7eb175b6-8c5d-4d7e-a666-d2fdd323a736)
+      - Imagem 2:
+        ![Imagem do WhatsApp de 2025-05-22 à(s) 01 33 45_01d9b17e](https://github.com/user-attachments/assets/560abc1d-1ef0-42b5-a335-6895dbce8ee8)
 
-            (imagem aqui)
-    
-    - Então, como resultado foram apontados 0 problemas de severidade alta, 6 problemas de severidade média, e 356 de baixa.
+  - 4: Imagem mostrando que a pipeline gerou Warnings. Os quais são motivamos por pontos de possíveis SQL injections, possível binding para todas as interfaces e Possível XSS (Cross-Site Scripting).
+
+    ![image](https://github.com/user-attachments/assets/a523e434-9fd4-45c5-9c95-e6881524f1fc)
+
+  - Então, como resultado foram apontados 0 problemas de severidade alta, 6 problemas de severidade média, e 356 de baixa.
 
         Métricas Principais
-            Total de arquivos analisados: 175
+        Total de arquivos analisados: 175
             Problemas encontrados: 6
             Problemas por gravidade:
                 Severidade Média: 6
@@ -201,6 +184,8 @@ Essa etapa geralmente agrupa jobs relacionados a qualidade de código, análise 
 ## 📈 Próximos Passos
 
  - Aprofundar o entendimento da arquitetura do projeto MEPA.
+
+ - Verificar a veracidade do relatório gerado pelo JOB do SAST.
 
  - Aplicar os conhecimentos adquiridos em DevSecOps para identificar possíveis vulnerabilidades no ciclo de desenvolvimento e propor melhorias.
 
