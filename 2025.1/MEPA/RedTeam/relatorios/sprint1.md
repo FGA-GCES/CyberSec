@@ -17,6 +17,7 @@ Durante esta sprint focamos nas seguintes atividades principais:
 
 * **Estudo sobre SSRF (Server-Side Request Forgery)**: Dedicamos tempo ao estudo teórico sobre a vulnerabilidade SSRF, utilizando as referências de estudo.
 
+* **Testes para identificar SSRF (Server-Side Request Forgery)**: Dedicamos tempo a testes práticos para tentar encontrar vulnerabilidades do tipo SSRF.
 
 
 ## Exploração inicial
@@ -67,13 +68,37 @@ ________________________________________________
 :: Progress: [6477/6477] :: Job [1/1] :: 28 req/sec :: Duration: [0:04:33] :: Errors: 0 ::
 ```
 
+### Teste com Burp Suite
+
+Para identificar SSRFs, utilizamos o **Burp Suite**, uma ferramenta especializada em analisar e manipular o tráfego de rede. Com ela fizemos a verificação das requisições enviadas ao servidor pelo cliente.
+
+Algumas das requisições que verificamos foram:
+* Login e logout;
+* Visualização das listas de unidades consumidoras, suas tarifas e dados do usuário;
+* Edição de dados do usuário;
+* Criação e modificação de unidades consumidoras;
+* Criação e modificação de tarifas de unidades consumidoras;
+
+<br>
+
+![Testes com Burp Suite - 01](../imagens/burpSuite01.png)
+
+![Testes com Burp Suite - 02](../imagens/burpSuite02.png)
+
+![Testes com Burp Suite - 03](../imagens/burpSuite03.png)
+
+<br>
+
+**Nenhuma vulnerabilidade foi descoberta** como resultado de nossos testes. Entretanto, isso não significa que uma vulnerabilidade não exista, pois nossos testes não abrangeram 100% das possíveis requisições que um usuário pode realizar.
+
 
 ## Dificuldades encontradas
 
 * Determinar quais pontos da aplicação são, de fato, suscetíveis à exploração de SSRF.
+* Dificuldade inicial em entender como processar as informações que o **Burp Suite** apresenta, diferenciando aquelas que realmente podem levar a uma vulnerabilidade de outras informações.
 
 ## Próximos passos
 
 * Aprofundar a análise de possíveis pontos vulneráveis.
-* Realizar testes práticos de SSRF utilizando ferramentas especializadas, como **SSRFmap** e **Burp Suite**, para automatizar e potencializar a detecção e exploração de vulnerabilidades.
-* Continuar o estudo sobre SSRF.
+* Realizar mais testes práticos de SSRF utilizando ferramentas especializadas, como **SSRFmap** e **Burp Suite**, para ter certeza que não há tal vulnerabilidade.
+* Iniciar o estudo sobre Insecure Direct Object References (IDOR).
