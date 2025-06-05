@@ -33,6 +33,7 @@
 ## Sub-grupo 2 - MEPA
 1. **Ricardo Augusto Valle Maciel** - 180077899 - [@avmricardo](https://github.com/avmricardo)
 2. **Mateus Orlando Medeiros Ribeiro** - 211062259 - [@MateusPy](https://github.com/MateusPy)
+3. **Danilo Carvalho Antunes** - 211039312 - [@Danilo-Carvalho-Antunes](https://github.com/Danilo-Carvalho-Antunes)
 
 ## Sub-grupo 3 - EJ
 1. **Arthur Gabriel Lima Gomes** - 200054333 - [@ArthurGabrieel](https://github.com/ArthurGabrieel)
