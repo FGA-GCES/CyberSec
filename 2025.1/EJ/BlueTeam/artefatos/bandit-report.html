@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+    Bandit Report
+</title>
+
+<style>
+
+html * {
+    font-family: "Arial", sans-serif;
+}
+
+pre {
+    font-family: "Monaco", monospace;
+}
+
+.bordered-box {
+    border: 1px solid black;
+    padding-top:.5em;
+    padding-bottom:.5em;
+    padding-left:1em;
+}
+
+.metrics-box {
+    font-size: 1.1em;
+    line-height: 130%;
+}
+
+.metrics-title {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: .25em;
+}
+
+.issue-description {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.candidate-issues {
+    margin-left: 2em;
+    border-left: solid 1px; LightGray;
+    padding-left: 5%;
+    margin-top: .2em;
+    margin-bottom: .2em;
+}
+
+.issue-block {
+    border: 1px solid LightGray;
+    padding-left: .5em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    margin-bottom: .5em;
+}
+
+.issue-sev-high {
+    background-color: Pink;
+}
+
+.issue-sev-medium {
+    background-color: NavajoWhite;
+}
+
+.issue-sev-low {
+    background-color: LightCyan;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="metrics">
+    <div class="metrics-box bordered-box">
+        <div class="metrics-title">
+            Metrics:<br>
+        </div>
+        Total lines of code: <span id="loc">13845</span><br>
+        Total lines skipped (#nosec): <span id="nosec">0</span>
+    </div>
+</div>
+
+
+
+
+<br>
+<div id="results">
+    
+<div id="issue-0">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej/components/menu.py" target="_blank">src/ej/components/menu.py</a><br>
+    <b>Line number: </b>28<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+27	                apps_links.append(app_menu)
+28	            except Exception:
+29	                pass
+30	        return apps_links
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-1">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej/settings/apps.py" target="_blank">src/ej/settings/apps.py</a><br>
+    <b>Line number: </b>73<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+72	                    log.info(f&quot;Adding {app} app to project apps list&quot;)
+73	            except Exception:
+74	                pass
+75	        return submodule_apps
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-2">
+<div class="issue-block issue-sev-medium">
+    <b>exec_used: </b> Use of exec detected.<br>
+    <b>Test ID:</b> B102<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/78.html" target="_blank">CWE-78</a><br>
+    <b>File: </b><a href="src/ej/settings/themes.py" target="_blank">src/ej/settings/themes.py</a><br>
+    <b>Line number: </b>23<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b102_exec_used.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b102_exec_used.html</a><br>
+
+<div class="code">
+<pre>
+22	                globs = dict(settings)
+23	                exec(data, globs)
+24	                globs = {k: v for k, v in globs.items() if k.isupper()}
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-3">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej/urls.py" target="_blank">src/ej/urls.py</a><br>
+    <b>Line number: </b>70<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+69	            log.info(f&quot;Including {app_config} URLs using get_apps_dynamic_urls()&quot;)
+70	        except Exception:
+71	            pass
+72	    return apps_urls
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-4">
+<div class="issue-block issue-sev-low">
+    <b>blacklist: </b> Consider possible security implications associated with picklefield module.<br>
+    <b>Test ID:</b> B403<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/502.html" target="_blank">CWE-502</a><br>
+    <b>File: </b><a href="src/ej_conversations/fields.py" target="_blank">src/ej_conversations/fields.py</a><br>
+    <b>Line number: </b>1<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle" target="_blank">https://bandit.readthedocs.io/en/1.8.3/blacklists/blacklist_imports.html#b403-import-pickle</a><br>
+
+<div class="code">
+<pre>
+1	import picklefield
+2	
+3	try:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-5">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej_conversations/models/conversation.py" target="_blank">src/ej_conversations/models/conversation.py</a><br>
+    <b>Line number: </b>437<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+436	                )
+437	            except Exception:
+438	                pass
+439	        return self.next_comment(user)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-6">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej_conversations/serializers.py" target="_blank">src/ej_conversations/serializers.py</a><br>
+    <b>Line number: </b>223<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+222	            return skipped_vote
+223	        except Exception:
+224	            pass
+225	        if vote.id is None:
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-7">
+<div class="issue-block issue-sev-low">
+    <b>try_except_pass: </b> Try, Except, Pass detected.<br>
+    <b>Test ID:</b> B110<br>
+    <b>Severity: </b>LOW<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/703.html" target="_blank">CWE-703</a><br>
+    <b>File: </b><a href="src/ej_dataviz/views/filters.py" target="_blank">src/ej_dataviz/views/filters.py</a><br>
+    <b>Line number: </b>91<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b110_try_except_pass.html</a><br>
+
+<div class="code">
+<pre>
+90	                self.clusters_filters.append(cluster.name)
+91	            except Exception:
+92	                pass
+93	        dataframe_utils = self.get_dataframe_utils(df)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-8">
+<div class="issue-block issue-sev-high">
+    <b>jinja2_autoescape_false: </b> By default, jinja2 sets autoescape to False. Consider using autoescape=True or use the select_autoescape function to mitigate XSS vulnerabilities.<br>
+    <b>Test ID:</b> B701<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/94.html" target="_blank">CWE-94</a><br>
+    <b>File: </b><a href="src/ej_integrations/mailing.py" target="_blank">src/ej_integrations/mailing.py</a><br>
+    <b>Line number: </b>60<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b701_jinja2_autoescape_false.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b701_jinja2_autoescape_false.html</a><br>
+
+<div class="code">
+<pre>
+59	        templates_dir = os.path.join(root, &quot;./jinja2/ej_integrations&quot;)
+60	        env = Environment(loader=FileSystemLoader(templates_dir))
+61	        host = get_host_with_schema(self.request)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-9">
+<div class="issue-block issue-sev-medium">
+    <b>request_without_timeout: </b> Call to requests without timeout<br>
+    <b>Test ID:</b> B113<br>
+    <b>Severity: </b>MEDIUM<br>
+    <b>Confidence: </b>LOW<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/400.html" target="_blank">CWE-400</a><br>
+    <b>File: </b><a href="src/ej_integrations/utils.py" target="_blank">src/ej_integrations/utils.py</a><br>
+    <b>Line number: </b>6<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b113_request_without_timeout.html</a><br>
+
+<div class="code">
+<pre>
+5	def get_npm_tag(url=BASE_URL_NPM):
+6	    version = get(url)
+7	    return version
+</pre>
+</div>
+
+
+</div>
+</div>
+
+<div id="issue-10">
+<div class="issue-block issue-sev-high">
+    <b>hashlib: </b> Use of weak MD5 hash for security. Consider usedforsecurity=False<br>
+    <b>Test ID:</b> B324<br>
+    <b>Severity: </b>HIGH<br>
+    <b>Confidence: </b>HIGH<br>
+    <b>CWE: </b><a href="https://cwe.mitre.org/data/definitions/327.html" target="_blank">CWE-327</a><br>
+    <b>File: </b><a href="src/ej_profiles/models.py" target="_blank">src/ej_profiles/models.py</a><br>
+    <b>Line number: </b>326<br>
+    <b>More info: </b><a href="https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html" target="_blank">https://bandit.readthedocs.io/en/1.8.3/plugins/b324_hashlib.html</a><br>
+
+<div class="code">
+<pre>
+325	    &quot;&quot;&quot;
+326	    digest = hashlib.md5(id_.encode(&quot;utf-8&quot;)).hexdigest()
+327	    return &quot;https://gravatar.com/avatar/{}?s=40&amp;d=mm&quot;.format(digest)
+</pre>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
