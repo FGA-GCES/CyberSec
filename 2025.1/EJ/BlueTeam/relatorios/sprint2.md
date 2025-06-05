@@ -2,7 +2,7 @@
 
 **Semestre:** 2025.1
 **Sprint:** 2
-**Grupo:** BlueTeam (Número do grupo a ser inserido)
+**Grupo:** BlueTeam EJ
 
 ## Introdução
 
