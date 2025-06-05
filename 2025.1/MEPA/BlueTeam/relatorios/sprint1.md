@@ -2,9 +2,11 @@
 
 ## Integrantes
 
-    - Ricardo Augusto Valle Maciel - 180077899 - @avmricardo
-    - Mateus Orlando Medeiros Ribeiro - 211062259 - @MateusPy
-    - Danilo Carvalho Antunes
+- **Ricardo Augusto Valle Maciel** - 180077899 - [@avmricardo](https://github.com/avmricardo)
+- **Mateus Orlando Medeiros Ribeiro** - 211062259 - [@MateusPy](https://github.com/MateusPy)
+- **Danilo Carvalho Antunes** - 211039312 - [@Danilo-Carvalho-Antunes](https://github.com/Danilo-Carvalho-Antunes)
+
+---
 
 ## 🛡️ Atividades de Capacitação Realizadas
 
@@ -23,7 +25,7 @@ Conteúdos abordados:
  - Malware Analysis (Análise de Malware).
 
 
-2 - ✅ Conclusão da trilha “DevSecOps” – TryHackMe
+2 - ⚙️ Estudos da trilha “DevSecOps” – TryHackMe
 
 Conteúdos abordados:
 
